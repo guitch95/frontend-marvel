@@ -2,6 +2,8 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import {FaRegHeart} from 'react-icons/fa';
+import AddToFavs from '../../components/AddToFavs';
 
 const Character = () => {
   const {characterId} = useParams();
@@ -31,11 +33,11 @@ const Character = () => {
   ) : (
     <div className="container-character">
       <img
-        src={`${data.message.thumbnail.path}.${data.message.thumbnail.extension}`}
+        src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
         alt="Image Hero Marvel"
       />
-      <p className="character-name">{data.message.name}</p>
-      {data.message.comics.map((element) => {
+      <p className="character-name">{data.name}</p>
+      {data.comics.map((element) => {
         return (
           <ul>
             <li className="character-movie" key={element._id}>

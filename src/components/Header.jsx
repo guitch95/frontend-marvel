@@ -13,14 +13,14 @@ const Header = () => {
 
         <div className="navigation-menu">
           <Link className="menu-item" to="/characters">
-            Personnages
+            <p>Personnages</p>
           </Link>
           <Link className="menu-item" to="/comics">
-            Comics
+            <p>Comics</p>
           </Link>
         </div>
         <Link to={'/favorites'} className="favs">
-          <FaHeart color="white" size={'40px'} />
+          <FaHeart color="white" size={'32px'} />
         </Link>
       </div>
     </header>

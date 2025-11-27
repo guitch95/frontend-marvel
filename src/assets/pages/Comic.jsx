@@ -29,12 +29,9 @@ const Comic = () => {
     </div>
   ) : (
     <div className="container-comic">
-      <img
-        src={`${data.message.thumbnail.path}.${data.message.thumbnail.extension}`}
-        alt=""
-      />
-      <p className="comic-name">{data.message.title}</p>
-      <p className="comic-description">{data.message.description}</p>
+      <img src={`${data.thumbnail.path}.${data.thumbnail.extension}`} alt="" />
+      <p className="comic-name">{data.title}</p>
+      <p className="comic-description">{data.description}</p>
     </div>
   );
 };

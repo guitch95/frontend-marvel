@@ -7,7 +7,7 @@ import Comics from './assets/pages/Comics';
 import Favorites from './assets/pages/Favorites';
 import Character from './assets/pages/Character';
 import Comic from './assets/pages/Comic';
-
+import NotFound from './assets/pages/NotFound';
 function App() {
   return (
     <>
@@ -21,6 +21,7 @@ function App() {
           <Route path="/comics/:characterId" element={<Character />} />
           <Route path="/comic/:comicId" element={<Comic />} />
           <Route path="/favorites" element={<Favorites />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>

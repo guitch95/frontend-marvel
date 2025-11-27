@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+@font-face {
+  font-family: 'BADABB';
+  src: url('./assets/fonts/BADABB__.TTF') format('truetype');
+}
+
 body {
   background-color: #082a3e;
   font-family: 'Inter', sans-serif;
@@ -50,16 +55,17 @@ header {
   align-items: center;
 }
 
+header p {
+  font-family: 'BADABB';
+  letter-spacing: 4px;
+}
+
 /* MAIN */
 
 .container {
   width: 1200px;
   margin: 0 auto;
   margin-top: 30px;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .container-loading {
@@ -73,8 +79,10 @@ header {
 
 .loading-text {
   color: white;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
+  font-family: 'BADABB', sans-serif;
+  letter-spacing: 4px;
 }
 
 .hero-container {
@@ -94,12 +102,10 @@ header {
 }
 
 h1 {
-  position: absolute;
-  top: 40%;
-  left: 40%;
+  font-family: 'BADABB', sans-serif;
+  letter-spacing: 1px;
   color: white;
   font-size: 48px;
-  font-weight: bold;
 }
 
 /* CARD */
@@ -206,4 +212,76 @@ h1 {
 .comic-description {
   text-align: center;
   font-weight: 500;
+}
+
+.container-card {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+  justify-content: space-evenly;
+  overflow: scroll;
+}
+.main-btn {
+  border-radius: 20px;
+  width: 90px;
+  background-color: #082a3e;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+button {
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-radius: 20px;
+  background-color: #082a3e;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid red;
+  cursor: pointer;
+}
+
+.container-comics {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+.search input {
+  height: 50px;
+  width: 500px;
+  background-color: #082a3e;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+input {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
 }

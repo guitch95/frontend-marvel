@@ -1,0 +1,7 @@
+.container-favorites {
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 1200px;
+  display: flex;
+  gap: 20px;
+}

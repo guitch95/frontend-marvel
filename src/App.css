@@ -10,56 +10,6 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* HEADER */
-
-header {
-  height: 80px;
-  width: 100%;
-  background-color: #082a3e56;
-  border-bottom: 1px solid rgba(201, 201, 201, 0.373);
-  display: flex;
-}
-
-.container-header {
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.link-logo {
-  cursor: pointer;
-}
-
-.container-header img {
-  width: 150px;
-}
-
-.navigation-menu {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  font-weight: bold;
-  font-size: 22px;
-}
-
-.menu-item {
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.favs {
-  display: flex;
-  align-items: center;
-}
-
-header p {
-  font-family: 'BADABB';
-  letter-spacing: 4px;
-}
-
 /* MAIN */
 
 .container {
@@ -82,32 +32,8 @@ header p {
   font-size: 48px;
   font-weight: bold;
   font-family: 'BADABB', sans-serif;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
 }
-
-.hero-container {
-  width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  color: white;
-}
-
-.hero-img {
-  position: relative;
-}
-
-.hero-img img {
-  opacity: 0.7;
-}
-
-h1 {
-  font-family: 'BADABB', sans-serif;
-  letter-spacing: 1px;
-  color: white;
-  font-size: 48px;
-}
-
 /* CARD */
 
 .card {
@@ -126,7 +52,6 @@ h1 {
   height: 250px;
   border-radius: 10px;
   margin-bottom: 15px;
-  object-fit: contai;
 }
 
 .card h2 {
@@ -158,6 +83,18 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.character-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .container-character img {
@@ -171,6 +108,8 @@ h1 {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 30px;
+  font-family: 'BADABB', sans-serif;
+  letter-spacing: 4px;
 }
 
 .character-movie {

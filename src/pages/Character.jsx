@@ -3,9 +3,8 @@ import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {FaRegHeart} from 'react-icons/fa';
-import AddToFavs from '../../components/AddToFavs';
 
-const Character = () => {
+const Character = ({favorites, setFavorites}) => {
   const {characterId} = useParams();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
@@ -32,20 +31,33 @@ const Character = () => {
     </div>
   ) : (
     <div className="container-character">
+      <FaRegHeart
+        size={'32px'}
+        onClick={() => {
+          const isAlreadyFavorite = favorites.find(
+            (fav) => fav._id === data._id
+          );
+          if (!isAlreadyFavorite) {
+            const copy = [...favorites];
+            copy.push(data);
+            setFavorites(copy);
+          }
+        }}></FaRegHeart>
+
       <img
         src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
         alt="Image Hero Marvel"
       />
       <p className="character-name">{data.name}</p>
-      {data.comics.map((element) => {
-        return (
-          <ul>
-            <li className="character-movie" key={element._id}>
-              {element.title}
-            </li>
-          </ul>
-        );
-      })}
+      <div className="character-movies">
+        {data.comics.map((element) => {
+          return (
+            <p className="character-movie" key={element._id}>
+              - {element.title}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 };

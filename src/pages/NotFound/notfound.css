@@ -1,0 +1,27 @@
+.container-notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  height: calc(100vh - 80px);
+}
+
+.container-notfound p {
+  text-align: center;
+  font-family: 'BADABB';
+  color: white;
+  font-size: 62px;
+}
+
+.container-notfound button {
+  background-color: red;
+  font-family: 'BADABB';
+  letter-spacing: 4px;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
-import logo from '../assets/img/logo.png';
+import logo from '../../assets/img/logo.png';
 import {Link} from 'react-router-dom';
-import {FaHeart} from 'react-icons/fa6';
+import './header.css';
 
 const Header = () => {
   return (
@@ -18,10 +18,10 @@ const Header = () => {
           <Link className="menu-item" to="/comics">
             <p>Comics</p>
           </Link>
+          <Link className="menu-item" to="/favorites">
+            <p>Favoris</p>
+          </Link>
         </div>
-        <Link to={'/favorites'} className="favs">
-          <FaHeart color="white" size={'32px'} />
-        </Link>
       </div>
     </header>
   );

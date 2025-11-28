@@ -1,8 +1,8 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import ComicCard from '../../components/ComicCard';
-import Search from '../../components/Search';
+import ComicCard from '../components/ComicCard';
+import Search from '../components/Search';
 
 const Comics = () => {
   const [loading, setLoading] = useState(true);
@@ -45,7 +45,7 @@ const Comics = () => {
   ) : (
     <div className="container">
       <Search
-        placeholder="Search your favorite comics"
+        placeholder="Rechercher votre comics favoris"
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />

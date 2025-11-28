@@ -1,0 +1,17 @@
+.container-hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-image: url('../../assets/img/hero.png');
+}
+
+h1 {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  font-family: 'BADABB', sans-serif;
+  letter-spacing: 3px;
+  color: white;
+  font-size: 72px;
+  text-align: center;
+}

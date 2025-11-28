@@ -1,0 +1,48 @@
+header {
+  height: 80px;
+  width: 100%;
+  background-color: #082a3e;
+  border-bottom: 1px solid rgba(201, 201, 201, 0.373);
+  display: flex;
+}
+
+.container-header {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-logo {
+  cursor: pointer;
+}
+
+.container-header img {
+  width: 150px;
+}
+
+.navigation-menu {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.menu-item {
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.favs {
+  display: flex;
+  align-items: center;
+}
+
+header p {
+  font-family: 'BADABB';
+  letter-spacing: 4px;
+}

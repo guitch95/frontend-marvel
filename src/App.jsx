@@ -22,7 +22,6 @@ function App() {
             path="/characters"
             element={<Characters favorites={favorites} />}
           />
-          {/* <Route path="/character/:characterId" element={<Character />} /> */}
           <Route path="/comics" element={<Comics />} />
           <Route
             path="/comics/:characterId"

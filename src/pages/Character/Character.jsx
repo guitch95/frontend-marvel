@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {FaRegHeart, FaHeart} from 'react-icons/fa';
+import './character.css';
 
 const Character = ({favorites, setFavorites}) => {
   const {characterId} = useParams();

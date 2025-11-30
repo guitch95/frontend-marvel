@@ -1,15 +1,18 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import ComicCard from '../components/ComicCard';
-import Search from '../components/Search';
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
+import Search from '../../components/Search/Search';
+import './characters.css';
 
-const Comics = () => {
+const Characters = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const [count, setCount] = useState(0);
+  // const [favsArr, setFavsArr] = useState([]);
+
   const limit = 100;
 
   useEffect(() => {
@@ -17,9 +20,9 @@ const Comics = () => {
       try {
         const skip = (page - 1) * limit;
         const response = await axios.get(
-          `http://localhost:3000/comics?skip=${skip}&limit=${limit}&name=${searchTerm}`
+          `http://localhost:3000/characters?name=${searchTerm}&skip=${skip}&limit=${limit}`
         );
-        console.log(response.data);
+        // console.log(response.data);
         setData(response.data);
         setCount(response.data.count);
         setLoading(false);
@@ -34,24 +37,24 @@ const Comics = () => {
 
   const pages = [];
 
-  for (let i = 0; i <= totalPages; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     pages.push(i);
   }
 
   return loading ? (
     <div className="container-loading">
-      <p className="loading-text">Awakening Comics...</p>
+      <p className="loading-text">Awakening Heroes...</p>
     </div>
   ) : (
     <div className="container">
       <Search
-        placeholder="Rechercher votre comic favoris"
+        placeholder="Rechercher votre héros favoris"
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <div className="container-comics">
+      <div className="container-card">
         {data.results.map((element) => {
-          return <ComicCard key={element._id} element={element} />;
+          return <CharacterCard key={element._id} element={element} />;
         })}
       </div>
       <div className="container-btn">
@@ -80,4 +83,4 @@ const Comics = () => {
   );
 };
 
-export default Comics;
+export default Characters;

@@ -2,11 +2,11 @@ import './App.css';
 import Header from './components/Header/Header';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Characters from './pages/Characters';
-import Comics from './pages/Comics';
+import Characters from './pages/Characters/Characters';
+import Comics from './pages/Comics/Comics';
 import Favorites from './pages/Favorites/Favorites';
-import Character from './pages/Character';
-import Comic from './pages/Comic';
+import Character from './pages/Character/Character';
+import Comic from './pages/Comic/Comic';
 import NotFound from './pages/NotFound/NotFound';
 import {useState, useEffect} from 'react';
 

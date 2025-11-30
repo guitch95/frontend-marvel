@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './characterCard.css';
 
 const CharacterCard = ({element}) => {
   const picture = `${element.thumbnail.path}.${element.thumbnail.extension}`;

@@ -1,0 +1,47 @@
+.link-character {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.container-character {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.character-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-character img {
+  width: 400px;
+  border-radius: 10px;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+.character-name {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  font-family: 'BADABB', sans-serif;
+  letter-spacing: 4px;
+}
+
+.character-movie {
+  margin-bottom: 15px;
+  list-style: disc;
+}

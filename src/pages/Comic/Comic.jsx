@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {FaRegHeart, FaHeart} from 'react-icons/fa';
+import './comic.css';
 
 const Comic = ({favorites, setFavorites}) => {
   const {comicId} = useParams();
@@ -34,7 +35,8 @@ const Comic = ({favorites, setFavorites}) => {
       <p className="loading-text">Awakening Heroes...</p>
     </div>
   ) : (
-    <div className="container-comic">
+    <div className="container-comics">
+      {/* Gestion de l'icône des Favoris */}
       {isInFavorites() ? (
         <FaHeart
           size={'32px'}

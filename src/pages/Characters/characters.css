@@ -1,0 +1,28 @@
+.container-card {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.main-btn {
+  border-radius: 20px;
+  width: 90px;
+  background-color: #082a3e;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.active {
+  border: 2px solid red;
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import ComicCard from '../../components/ComicCard';
-import CharacterCard from '../../components/CharacterCard';
+import ComicCard from '../../components/ComicCard/ComicCard';
+import CharacterCard from '../../components/CharacterCard/CharacterCard';
 import './favorites.css';
 
 const Favorites = ({favorites}) => {

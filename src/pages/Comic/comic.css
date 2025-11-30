@@ -1,0 +1,23 @@
+.container-comics {
+  width: 1200px;
+  margin: 0 auto;
+  margin-top: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  gap: 20px;
+  padding: 10px;
+}
+
+.container-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.container-input input {
+  color: black;
+}

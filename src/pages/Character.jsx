@@ -2,28 +2,53 @@ import React from 'react';
 import {useParams} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import axios from 'axios';
-import {FaRegHeart} from 'react-icons/fa';
+import {FaRegHeart, FaHeart} from 'react-icons/fa';
 
 const Character = ({favorites, setFavorites}) => {
   const {characterId} = useParams();
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState(null);
+  const [comicTitles, setComicTitles] = useState([]);
+
+  const isInFavorites = () => {
+    return favorites.some((fav) => fav._id === data._id);
+  };
+
+  useEffect(() => {
+    const fetchCharacter = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/character/${characterId}`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchCharacter();
+  }, [characterId]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://site--mar-backend--cn64gcfznbgf.code.run/character/${characterId}`
+        const titles = await Promise.all(
+          data.comics.map(async (comicId) => {
+            const response = await axios.get(
+              `http://localhost:3000/comic/${comicId}`
+            );
+
+            return response.data.title;
+          })
         );
-        setData(response.data);
+        setComicTitles(titles);
         setLoading(false);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
     fetchData();
-  }, [characterId]);
+  }, [data]);
 
   return loading ? (
     <div className="container-loading">
@@ -31,18 +56,26 @@ const Character = ({favorites, setFavorites}) => {
     </div>
   ) : (
     <div className="container-character">
-      <FaRegHeart
-        size={'32px'}
-        onClick={() => {
-          const isAlreadyFavorite = favorites.find(
-            (fav) => fav._id === data._id
-          );
-          if (!isAlreadyFavorite) {
+      {isInFavorites() ? (
+        <FaHeart
+          size={'32px'}
+          onClick={() => {
+            const newFavorites = favorites.filter(
+              (fav) => fav._id !== data._id
+            );
+            setFavorites(newFavorites);
+          }}
+        />
+      ) : (
+        <FaRegHeart
+          size={'32px'}
+          onClick={() => {
             const copy = [...favorites];
             copy.push(data);
             setFavorites(copy);
-          }
-        }}></FaRegHeart>
+          }}
+        />
+      )}
 
       <img
         src={`${data.thumbnail.path}.${data.thumbnail.extension}`}
@@ -50,10 +83,10 @@ const Character = ({favorites, setFavorites}) => {
       />
       <p className="character-name">{data.name}</p>
       <div className="character-movies">
-        {data.comics.map((element) => {
+        {comicTitles.map((title, index) => {
           return (
-            <p className="character-movie" key={element._id}>
-              - {element.title}
+            <p className="character-movie" key={index}>
+              - {title}
             </p>
           );
         })}

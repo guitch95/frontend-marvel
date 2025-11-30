@@ -8,10 +8,32 @@ import Favorites from './pages/Favorites/Favorites';
 import Character from './pages/Character';
 import Comic from './pages/Comic';
 import NotFound from './pages/NotFound/NotFound';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 function App() {
   const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    const getFavorites = () => {
+      try {
+        const stored = localStorage.getItem('marvelFavorites');
+        if (stored) {
+          const parsed = JSON.parse(stored);
+          setFavorites(parsed);
+        }
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    getFavorites();
+  }, []);
+
+  useEffect(() => {
+    if (favorites.length > 0) {
+      localStorage.setItem('marvelFavorites', JSON.stringify(favorites));
+    }
+  }, [favorites]);
+
   return (
     <>
       <Router>
@@ -29,7 +51,12 @@ function App() {
               <Character setFavorites={setFavorites} favorites={favorites} />
             }
           />
-          <Route path="/comic/:comicId" element={<Comic />} />
+          <Route
+            path="/comic/:comicId"
+            element={
+              <Comic favorites={favorites} setFavorites={setFavorites} />
+            }
+          />
           <Route
             path="/favorites"
             element={<Favorites favorites={favorites} />}

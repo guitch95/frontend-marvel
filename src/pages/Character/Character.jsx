@@ -35,7 +35,7 @@ const Character = ({favorites, setFavorites}) => {
         const titles = await Promise.all(
           data.comics.map(async (comicId) => {
             const response = await axios.get(
-              `http://localhost:3000/comic/${comicId}`
+              `https://site--mar-backend--cn64gcfznbgf.code.run/comic/${comicId}`
             );
 
             return response.data.title;

@@ -17,7 +17,7 @@ const Comics = () => {
       try {
         const skip = (page - 1) * limit;
         const response = await axios.get(
-          `http://localhost:3000/comics?skip=${skip}&limit=${limit}&name=${searchTerm}`
+          `https://site--mar-backend--cn64gcfznbgf.code.run/comics?skip=${skip}&limit=${limit}&name=${searchTerm}`
         );
         console.log(response.data);
         setData(response.data);

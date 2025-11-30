@@ -19,7 +19,7 @@ const Characters = () => {
       try {
         const skip = (page - 1) * limit;
         const response = await axios.get(
-          `https://site--marvel-backend--cn64gcfznbgf.code.run/characters?name=${searchTerm}&skip=${skip}&limit=${limit}`
+          `http://localhost:3000/characters?name=${searchTerm}&skip=${skip}&limit=${limit}`
         );
         // console.log(response.data);
         setData(response.data);

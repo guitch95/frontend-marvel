@@ -13,7 +13,7 @@ const Character = ({favorites, setFavorites}) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://site--mar-backend--cn64gcfznbgf.code.run/comics/${characterId}`
+          `https://site--mar-backend--cn64gcfznbgf.code.run/character/${characterId}`
         );
         setData(response.data);
         setLoading(false);
